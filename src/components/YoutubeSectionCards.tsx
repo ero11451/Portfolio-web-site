@@ -137,7 +137,7 @@ export  function YoutubeSectionCards() {
         ) : null}
       </AnimatePresence>
       <ul className=" sm:px-6 grid grid-cols-1 md:grid-cols-4 items-start gap-4">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}

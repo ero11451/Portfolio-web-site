@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes, } from "react-router-dom";
+// import { BrowserRouter, Route, Routes, } from "react-router-dom";
 // import ClassRoom from "../pages/ClassRoom";
 import "preline/preline";
 import { IStaticMethods } from "preline/preline";
-import { RoutePath } from "./routerPath";
+// import { RoutePath } from "./routerPath";
 import { HomePage } from "../pages/home";
 // import { CourseClassList } from "../pages/Courses/CourseClassList";
 

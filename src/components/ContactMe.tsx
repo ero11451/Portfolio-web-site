@@ -43,7 +43,7 @@ export  function ContactMe() {
                     <div>
                         <p className="lg:text-5xl  text-bold mb-4">Got an Idea? share it with me </p>
 
-                        {socialLinks.map((item, index) =>
+                        {socialLinks.map((item) =>
 
                             <a href={item.link} key={item.id} className="flex justify-between p-5 my-2 rounded-lg gap-2 items-center text-xs text-white bg-[#5E5E5E] bg-opacity-20  border-[#5E5E5E] ">
                                 <div>

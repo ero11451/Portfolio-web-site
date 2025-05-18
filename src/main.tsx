@@ -2,7 +2,7 @@ import { ReactNode, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
-import { Provider, useSelector } from 'react-redux'
+// import { Provider, useSelector } from 'react-redux'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import React from 'react'
 
