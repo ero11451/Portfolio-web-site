@@ -1,6 +1,5 @@
-import { Transition } from "react-transition-group";
 import { Timeline } from "./ui/timeline";
-import { Profiler, useEffect, useState } from "react";
+import { Profiler } from "react";
 
 
 const designToolIcons = [

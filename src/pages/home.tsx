@@ -1,5 +1,5 @@
 import { AnimatedprojectDemo } from "../components/AnimatedProjectDemo";
-import { BackgroundGradientAnimationDemo } from "../components/BackgroundGradientAnimationDemo";
+// import { BackgroundGradientAnimationDemo } from "../components/BackgroundGradientAnimationDemo";
 import { Certifications } from "../components/Certifications";
 import { ContactMe } from "../components/ContactMe";
 import { Educations } from "../components/Educations";
