@@ -18,20 +18,20 @@ export const HomePage = () => {
     return (
         <div className=" overfull-hidden bg-gradient-to-r from-[#0C0C0D]  to-[#0C0C0D]" id="hs-scrollspy-to-destroy-parent ">
             <NavbarDemo />
-            <BackgroundGradientAnimationDemo>
+            {/* <BackgroundGradientAnimationDemo> */}
                 <Header />
-            </BackgroundGradientAnimationDemo>
+            {/* </BackgroundGradientAnimationDemo> */}
 
 
             <div className="bg-gradient-to-r from-[#0C0C0D]  to-[#0C0C0D] min-h-screen" id="hs-scrollspy-to-destroy">
                 {/* <MyProject /> */}
 
-                <BackgroundGradientAnimationDemo>
+                {/* <BackgroundGradientAnimationDemo> */}
                     <section id="Experience" className="transition-all overflow-hidden duration-500">
 
                         <Experience />
                     </section>
-                </BackgroundGradientAnimationDemo>
+                {/* </BackgroundGradientAnimationDemo> */}
 
                 <section id="Projects" className="transition-all duration-500">
                     <AnimatedprojectDemo />
