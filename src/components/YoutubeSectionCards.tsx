@@ -30,13 +30,13 @@ export  function YoutubeSectionCards() {
 
   return (
     <div className="max-w-[85rem] mx-auto px-4 text-white">
-      <div className="flex justify-between lg:p-10">
+      <div className="lg:flex justify-between lg:p-10">
         <div>
           <p className="text-3xl font-bold">From My YouTube Channel 📹</p>
-          <p className="mt-2 text-sm font-thin">View selected videos from my Youtubed Chanel</p>
+          <p className="my-2 mb-5 text-sm font-thin">View selected videos from my Youtubed Chanel</p>
         </div>
         <div>
-        <a href="https://www.youtube.com/@neeboh-io" className="border p-2 px-4 text-sm rounded-full h-fix border-[#FFFFFF1F]">
+        <a href="https://www.youtube.com/@neeboh-io" className="border p-2 px-4 lg:w-fit w-full text-sm rounded-full h-fix border-[#FFFFFF1F]">
           Subscribe</a>
 
         </div>

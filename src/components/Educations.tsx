@@ -28,7 +28,7 @@ export  function Educations() {
     ].map((edu, index) => (
       <div
         key={index}
-        className="grid grid-cols-12 md:flex-row justify-between gap-8 text-white bg-[#5E5E5E]/20 border border-[#5E5E5E] rounded-lg p-5"
+        className="grid lg:grid-cols-12 md:flex-row justify-between gap-8 text-white bg-[#5E5E5E]/20 border border-[#5E5E5E] rounded-lg p-5"
       >
         {/* Date & Degree Summary */}
         <div className="col-span-5">

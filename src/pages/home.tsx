@@ -16,35 +16,35 @@ import { YoutubeSectionCards } from "../components/YoutubeSectionCards";
 
 export const HomePage = () => {
     return (
-        <div className="w-screen  overfull-hidden" id="hs-scrollspy-to-destroy-parent">
+        <div className=" overfull-hidden" id="hs-scrollspy-to-destroy-parent bg-gradient-to-r from-[#0C0C0D]  to-[#0C0C0D] min-h-scree">
+            <NavbarDemo />
             <BackgroundGradientAnimationDemo>
-                <NavbarDemo />
                 <Header />
             </BackgroundGradientAnimationDemo>
+
 
             <div className="bg-gradient-to-r from-[#0C0C0D]  to-[#0C0C0D] min-h-screen" id="hs-scrollspy-to-destroy">
                 {/* <MyProject /> */}
 
-                <section id="Experience" className="transition-all duration-500">
-
-                    <Experience />
-                </section>
-                <section id="Projects"className="transition-all duration-500">
-                <AnimatedprojectDemo />
+                <BackgroundGradientAnimationDemo>
+                    <section id="Experience" className="transition-all overflow-hidden duration-500">
+                        <Experience />
                     </section>
+                </BackgroundGradientAnimationDemo>
+
+                <section id="Projects" className="transition-all duration-500">
+                    <AnimatedprojectDemo />
+                </section>
                 {/* <CardSpotlightDemo /> */}
 
-                <section id="YouTube"className="transition-all duration-500">
+                <section id="YouTube" className="transition-all duration-500">
                     <YoutubeSectionCards />
                 </section>
-                <section id='Education'className="transition-all duration-500">
+                <section id='Education' className="transition-all duration-500">
                     <Certifications />
-
                     <Educations />
-
                 </section>
-                <section id="contact"className="transition-all duration-500">
-
+                <section id="contact" className="transition-all duration-500">
                     <Testimonials />
                     <ContactMe />
                 </section>

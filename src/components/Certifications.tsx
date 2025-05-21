@@ -41,7 +41,7 @@ export function Certifications() {
                 ].map((cert, index) => (
                     <div
                         key={index}
-                        className=" grid grid-cols-12 p-5 gap-6 rounded-lg text-xs text-white bg-[#5E5E5E]/20 border border-[#5E5E5E]"
+                        className=" grid lg:grid-cols-12  p-5 gap-6 rounded-lg text-xs text-white bg-[#5E5E5E]/20 border border-[#5E5E5E]"
                     >
                         <div className="col-span-3 gap-3 flex">
                             <img src="icon/cetificationICon.svg" alt="Certificate icon" className="w-8 h-8" />
@@ -51,7 +51,7 @@ export function Certifications() {
                             </div>
                         </div>
                         <div className="flex flex-col justify-center col-span-8 flex-1 gap-1">
-                            <p className="text-xl font-bold">{cert.title}</p>
+                            <p className="lg:text-xl font-bold">{cert.title}</p>
                             {/* <p className="text-sm font-light text-gray-300">Issued by {cert.issuer}</p> */}
                         </div>
                         <img src="icon/arrowInABoxIcon.png" alt="View certificate" className="w-5 h-5 self-start md:self-center" />

@@ -3,27 +3,28 @@ import { Animatedproject } from "./ui/animated-project";
 export  function AnimatedprojectDemo() {
   const project = [
     {
-      quote: "A mobile app developed for TSL Nigeria to manage transportation logistics and enhance operational efficiency.",
-      name: "TSL Nigeria App",
+      quote: "Orca is a platform that allows businesses collect payments across multiple channels, including USSD, cards, and bank transfers.",
+      name: "Orca",
       designation: "Full Stack Developer",
       src: "/image/orca.png",
     },
 
     {
-      quote: "A mobile app developed for TSL Nigeria to manage transportation logistics and enhance operational efficiency.",
-      name: "TSL Nigeria App",
+      quote: "Neeboh is a platform that allows users to create and manage their own personal websites, with customizable templates and easy-to-use tools.",
+      name: "Neeboh",
       designation: "Full Stack Developer",
       src: "/image/neeboh-homepage.png",
     },
+    
     {
-      quote: "A mobile app developed for TSL Nigeria to manage transportation logistics and enhance operational efficiency.",
-      name: "TSL Nigeria App",
+      quote: "Noted is a platform that allows businesses manage their facilities and assets, with features for tracking maintenance, inventory, and more.",
+      name: "Noted",
       designation: "Full Stack Developer",
       src: "/image/noted-screenshot.png",
     },
     {
-      quote: "A mobile app developed for TSL Nigeria to manage transportation logistics and enhance operational efficiency.",
-      name: "TSL Nigeria App",
+      quote: "Xceed 365 is a HR comprehensive platform designed to streamline business operations and enhance productivity.",
+      name: "Xceed 365",
       designation: "Full Stack Developer",
       src: "/image/xceed-bg.png",
     },
@@ -37,7 +38,7 @@ export  function AnimatedprojectDemo() {
       quote: "An app designed for Miracle Assembly to deliver sermons, livestreams, and community events to members.",
       name: "Miracle Assembly App",
       designation: "Mobile Developer",
-      src: "https://images.unsplash.com/photo-1573164574237-6083f9a8100b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
+      src: "https://ix-marketing.imgix.net/2024-06_blog_the-power-of-images_image-4_drive-engagement.jpg?ixembed=1717710892533&auto=format,compress",
     },
     {
       quote: "The official mobile app for Voice of Freedom Ministries International, offering content delivery and engagement tools.",
@@ -55,7 +56,7 @@ export  function AnimatedprojectDemo() {
 
   return (
     <div>
-      <div className="mx-auto w-full px-4 py-2 font-sans antialiased md:max-w-6xl">
+      <div className="mx-auto w-fit px-4 py-2 font-sans antialiased md:max-w-6xl">
         <h1 className="text-4xl font-bold text-white">My Projects</h1>
         <p className="mt-4 text-lg text-gray-300">Explore my recent projects</p>
       </div>
