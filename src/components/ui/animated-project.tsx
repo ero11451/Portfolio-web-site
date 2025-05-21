@@ -9,6 +9,7 @@ type IProject = {
     name: string;
     designation: string;
     src: string;
+    technology: string[];
 };
 export const Animatedproject = ({
     project,
@@ -117,8 +118,16 @@ export const Animatedproject = ({
                             >
                                 
                                 <div>
-                                    <span className="bg-gradient-to-r from-[#3B3B3B52]  to-[#1A1A1A00] inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-[#3C3C3C] gra text-white shadow-2xs ">Badge</span>
-
+                                    <div className="flex flex-wrap gap-2">
+                                        {project[active].technology.map((skill, index) => (
+                                            <Badge
+                                                key={index}
+                                                className="inline-flex items-center rounded-full border border-[#282829] bg-gradient-to-r from-[#3B3B3B52]  to-[#1A1A1A00] px-2 py-1 text-sm font-medium text-white"
+                                            
+                                               label = {skill}
+                                            />
+                                        ))}
+                                    </div>
                                 </div>
                                 <h3 className="text-2xl font-[600] text-white dark:text-white my-3">
                                     {project[active].name}
@@ -180,6 +189,22 @@ export const Animatedproject = ({
                 </div>
             </div>
 
+        </div>
+    );
+};
+
+const Badge = ({
+    label,
+    className,
+}: {
+    label: string;
+    className?: string;
+}) => {
+    return (
+        <div
+            className={`inline-flex items-center rounded-full border border-[#282829] bg-gradient-to-r from-[#3B3B3B52]  to-[#1A1A1A00] px-2 py-1 text-sm font-medium text-white ${className}`}
+        >
+            {label}
         </div>
     );
 };
