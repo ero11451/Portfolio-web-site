@@ -16,7 +16,7 @@ import { YoutubeSectionCards } from "../components/YoutubeSectionCards";
 
 export const HomePage = () => {
     return (
-        <div className=" overfull-hidden" id="hs-scrollspy-to-destroy-parent bg-gradient-to-r from-[#0C0C0D]  to-[#0C0C0D] min-h-scree">
+        <div className=" overfull-hidden bg-gradient-to-r from-[#0C0C0D]  to-[#0C0C0D]" id="hs-scrollspy-to-destroy-parent ">
             <NavbarDemo />
             <BackgroundGradientAnimationDemo>
                 <Header />
@@ -28,6 +28,7 @@ export const HomePage = () => {
 
                 <BackgroundGradientAnimationDemo>
                     <section id="Experience" className="transition-all overflow-hidden duration-500">
+
                         <Experience />
                     </section>
                 </BackgroundGradientAnimationDemo>
@@ -42,9 +43,12 @@ export const HomePage = () => {
                 </section>
                 <section id='Education' className="transition-all duration-500">
                     <Certifications />
+
                     <Educations />
+
                 </section>
                 <section id="contact" className="transition-all duration-500">
+
                     <Testimonials />
                     <ContactMe />
                 </section>
