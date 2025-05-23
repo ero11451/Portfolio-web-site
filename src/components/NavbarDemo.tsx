@@ -64,7 +64,7 @@ export  function NavbarDemo() {
             </MobileNavHeader>
       
             <MobileNavMenu
-              className="bg-white "
+              className="bg-black "
               isOpen={isMobileMenuOpen}
               onClose={() => setIsMobileMenuOpen(false)}
             >
@@ -75,7 +75,7 @@ export  function NavbarDemo() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="relative "
                 >
-                  <span className="block">{item.name}</span>
+                  <span className="block text-white ">{item.name}</span>
                 </a>
               ))}
             </MobileNavMenu>

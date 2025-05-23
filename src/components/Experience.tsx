@@ -1,28 +1,19 @@
 import { Timeline } from "./ui/timeline";
-import { Profiler } from "react";
+// import { Profiler } from "react";
 
 
 const designToolIcons = [
-    {
-        name: "Figma",
-        svg: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
-            <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
-            <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
-            <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
-            <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
-        </svg>,
-        description: "Design Tool"
-    },
-    {
-        name: "Sketch",
-        svg: <svg className="shrink-0 size-4 me-1" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd"
-                d="M11.0597 0.32329C11.02 0.31932 10.98 0.31932 10.9403 0.32329L5.3403 0.883285C5.17075 0.900245 5.0164 0.988485 4.91578 1.126L0.119634 7.68074C0.0464736 7.77832 0.00235197 7.89893 9.11713e-05 8.02973C3.03713e-05 8.03325 0 8.03679 0 8.04031L4.76837e-06 8.04274C0.000580768 8.18808 0.0528336 8.32124 0.139339 8.42477L10.5367 21.0616C10.6506 21.2001 10.8206 21.2803 11 21.2803C11.1794 21.2803 11.3494 21.2001 11.4633 21.0616L21.8606 8.42479C21.9472 8.32125 21.9994 8.18808 22 8.04274V8.03301C21.9998 8.0237 21.9995 8.0144 21.999 8.00511C21.992 7.8838 21.949 7.77216 21.8803 7.68072L17.0842 1.126C16.9835 0.988485 16.8293 0.900245 16.6597 0.883285L11.0597 0.32329ZM16.48 7.44031V7.40407L16.4757 7.44031H16.48ZM16.4947 7.28026H20.1003L16.9992 3.04205L16.4947 7.28026ZM15.9131 2.01461L11.8709 1.61039L15.2795 7.33684L15.9131 2.01461ZM10.1291 1.61039L6.0869 2.01461L6.7205 7.33684L10.1291 1.61039ZM5.00074 3.04205L1.89962 7.28026H5.50528L5.00074 3.04205ZM1.87066 8.64031L9.81378 18.2942L5.75794 8.70733C5.74859 8.68525 5.74102 8.66285 5.73518 8.64031H1.87066ZM7.24088 8.64031L11 18.3739L14.7591 8.64031H7.24088ZM16.2648 8.64031C16.259 8.66285 16.2514 8.68525 16.2421 8.70733L12.1862 18.2942L20.1293 8.64031H16.2648ZM11 2.49337L13.9446 7.44031H8.05539L11 2.49337Z"
-                fill="currentColor" />
-        </svg>,
-        description: "Design Tool"
-    },
+    // {
+    //     name: "Figma",
+    //     svg: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    //         <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
+    //         <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
+    //         <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
+    //         <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
+    //         <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
+    //     </svg>,
+    //     description: "Design Tool"
+    // },
     {
         name: "GitHub",
         svg: <svg className="shrink-0 size-4 me-1 dark:rouderd dark:bg-white" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -285,16 +276,16 @@ export function Experience() {
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
 
 
-            <Profiler id="Timeline" onRender={onRender}>
+            {/* <Profiler id="Timeline" onRender={onRender}> */}
                 <Timeline data={data} />
-            </Profiler>
+            {/* </Profiler> */}
 
 
         </div>
     );
 };
 
-function onRender(id: any, phase: any, actualDuration: any, baseDuration: any, startTime: any, commitTime: any) {
-    console.log({ id, phase, actualDuration, baseDuration, startTime, commitTime });
-    // Aggregate or log render timings...
-}
+// function onRender(id: any, phase: any, actualDuration: any, baseDuration: any, startTime: any, commitTime: any) {
+//     console.log({ id, phase, actualDuration, baseDuration, startTime, commitTime });
+//     // Aggregate or log render timings...
+// }

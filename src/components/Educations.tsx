@@ -4,7 +4,7 @@ export  function Educations() {
     {/* Header */}
     <div>
       <p className="text-4xl font-semibold">Education</p>
-      <p className="font-thin text-sm text-gray-300">
+      <p className="font-thin text-sm text-gray-300 mt-3">
         A blend of academic foundations and industry-relevant training that shapes my problem-solving and technical mindset.
       </p>
     </div>

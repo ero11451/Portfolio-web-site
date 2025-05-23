@@ -1,13 +1,48 @@
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
+
+
+const testimonials = [
+  {
+    quote:
+      "Working with Osamuyi Joseph Ero was seamless. The web app they built for us not only looked great but also performed flawlessly. Their technical skills and professionalism exceeded our expectations.",
+    name: "Sarah Okoro",
+    title: "Product Manager, NovaTech",
+  },
+  {
+    quote:
+      "Their ability to explain complex tech concepts in a simple, engaging way is unmatched. Thanks to their content, I finally grasped how APIs and backend services work together.",
+    name: "Ibrahim Lawal",
+    title: "Computer Science Student",
+  },
+  {
+    quote:
+      "A rare blend of deep technical expertise and a genuine passion for teaching. Osamuyi Joseph Ero is a go-to resource for anyone looking to level up in full-stack development or AI.",
+    name: "Chinedu Madu",
+    title: "Software Engineer, Paystack",
+  },
+  {
+    quote:
+      "We collaborated on a content series, and I was impressed by their clarity, creativity, and ability to connect with audiences. Their presence elevates any project.",
+    name: "Daniel K.",
+    title: "Tech YouTuber & Educator",
+  },
+  {
+    quote:
+      "From architecture decisions to deployment, Osamuyi Joseph Ero handled our SaaS project like a pro. Efficient, reliable, and always ready with thoughtful solutions.",
+    name: "Adaeze Umeh",
+    title: "CTO, Spryline Solutions",
+  },
+];
+
+
 export  function Testimonials() {
   return (
     <div>
         <div className="lg:mx-auto max-w-sm px-4 py-2 font-sans antialiased md:max-w-6xl md:px-8 lg:px-12 lg:mt-20 text-white flex flex-col gap-4 pb-10 p-20">
         <p className="text-4xl">Testimonials</p>
         <p className="font-thin text-sm text-">
-          Lorem ipsum dolor sit amet consectetur. Amet sed odio pellentesque
-          porttitor nibh iaculis.</p>
+          this are some testimonials from my clients: </p>
         </div>
     <div className=" rounded-md flex flex-col antialiased   items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
@@ -19,35 +54,3 @@ export  function Testimonials() {
     </div>
   );
 }
-
-const testimonials = [
-  {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
-  },
-  {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
-  },
-];
