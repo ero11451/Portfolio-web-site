@@ -31,11 +31,11 @@ export function Header() {
                         </div>
                     </div>
 
-                    <div className="flex justify-center md:justify-end">
+                    {/* <div className="flex justify-center md:justify-end">
                         <img
                             src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&h=800&q=80"
                             alt="Illustration" className="w-full h-96 object-contain max-w-sm md:max-w-lg lg:max-w-xl" />
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

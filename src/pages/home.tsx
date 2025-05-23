@@ -7,7 +7,7 @@ import { Header } from "../components/Hearder";
 import { NavbarDemo } from "../components/NavbarDemo";
 import { Testimonials } from "../components/Testimonials";
 import { YoutubeSectionCards } from "../components/YoutubeSectionCards";
-// import { BackgroundGradientAnimationDemo } from "../components/BackgroundGradientAnimationDemo";
+import { BackgroundGradientAnimationDemo } from "../components/BackgroundGradientAnimationDemo";
 // import { CardSpotlightDemo } from "../components/CardSpotlightDemo";
 // import { MyProject } from "../components/MyProject";
 // import { Navbar } from "../components/ui/resizable-navbar";
@@ -16,11 +16,10 @@ import { YoutubeSectionCards } from "../components/YoutubeSectionCards";
 
 export const HomePage = () => {
     return (
-        <div className="  bg-gradient-to-r from-[#0C0C0D] w-full to-[#0C0C0D]" id="hs-scrollspy-to-destroy-parent ">
+        <div className="  " id="hs-scrollspy-to-destroy-parent ">
             {/* <BackgroundGradientAnimationDemo> */}
                 <NavbarDemo />
                 <Header />
-            {/* </BackgroundGradientAnimationDemo> */}
 
             <div className="bg-gradient-to-r from-[#0C0C0D]  to-[#0C0C0D] min-h-screen" id="hs-scrollspy-to-destroy">
                 {/* <MyProject /> */}
@@ -56,6 +55,7 @@ export const HomePage = () => {
 
 
 
+            {/* </BackgroundGradientAnimationDemo> */}
 
         </div>
     );
