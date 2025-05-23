@@ -34,6 +34,7 @@ export const BackgroundGradientAnimation = ({
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
   const [curPos, setCurPos] = useState({ x: 0, y: 0 });
+  console.log("curPos", curPos);
   const [targetPos, setTargetPos] = useState({ x: 0, y: 0 });
 
   const animate = () => {

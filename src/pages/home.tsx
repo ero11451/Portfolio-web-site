@@ -7,7 +7,7 @@ import { Header } from "../components/Hearder";
 import { NavbarDemo } from "../components/NavbarDemo";
 import { Testimonials } from "../components/Testimonials";
 import { YoutubeSectionCards } from "../components/YoutubeSectionCards";
-import { BackgroundGradientAnimationDemo } from "../components/BackgroundGradientAnimationDemo";
+// import { BackgroundGradientAnimationDemo } from "../components/BackgroundGradientAnimationDemo";
 // import { CardSpotlightDemo } from "../components/CardSpotlightDemo";
 // import { MyProject } from "../components/MyProject";
 // import { Navbar } from "../components/ui/resizable-navbar";
