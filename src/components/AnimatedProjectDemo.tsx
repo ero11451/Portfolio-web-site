@@ -1,12 +1,28 @@
-import { Animatedproject } from "./ui/animated-project";
+import { Animatedproject, IProject } from "./ui/animated-project";
 
 export  function AnimatedprojectDemo() {
-  const project = [
+  const project: IProject[] = [
+     {
+      quote: "Euphoria is a platform that allows users to manage their personal insurance policies, with features for tracking claims, payments, and more.",
+      name: "AXA insurance",
+      designation: "Full Stack Developer",
+      technology:['Typescript', '.NET', 'Angular', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'mySQL','Redis' ],
+      src: "https://raw.githubusercontent.com/ero11451/efosa-euphoria/refs/heads/main/src/assets/images/axa_loading_1.gif",
+      github: 'https://github.com/ero11451/efosa-euphoria'
+    },
+    {
+      quote: "10zyme is a platform that allows users to manage their health and wellness, with features for tracking fitness goals, nutrition, and more.",
+      name: "10zyme",
+      designation: "Mobile Application Developer",
+      technology:['Typescript', 'React native', 'React', 'Node.js', 'Tailwind CSS', 'Firebase' ],
+      src: "image/10zyme-2024-Logo-Blue-Whale-Without-Copyright.png",
+      github: 'https://github.com/ero11451/efosa-euphoria'
+    },
     {
       quote: "Orca is a platform that allows businesses collect payments across multiple channels, including USSD, cards, and bank transfers.",
       name: "Orca",
       designation: "Full Stack Developer",
-      technology:[],
+      technology:['Typescript', '.NET', 'Angular', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'mySQL','Redis' ],
       src: "/image/orca.png",
     },
 

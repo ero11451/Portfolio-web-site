@@ -5,15 +5,15 @@ export function Header() {
         <>
 
 
-            <div className="lg:max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+            <div className="lg:max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-10 ">
 
                 <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center pt-32 justify-center text-white lg:pl-20 lg:justify-around">
-                    <div>
+                    <div className="h-full">
                         <p>Hello there👋  I am Osimuyi- </p>
                         <TextGenerateEffect 
                             textStyle="text-4xl text-white"
                             words={"Software Developer | Content Creator | Tech Educator | AI Enthusiast"} />
-                        <p className="mt-3 lg:text-lg font-thin text-sm text-gray-800 dark:text-neutral-400  text-white">
+                        <p className="mt-3 font-thin text-sm text-gray-800 dark:text-neutral-400  text-white">
                            Software Developer and Tech Educator passionate about building scalable apps, creating engaging content, and exploring real-world AI applications.</p>
                         <div className="mt-7 grid gap-3 w-full sm:inline-flex">
                             <a  className="py-3 px-4 inline-flex justify-center items-center gap-x-2 border-white text-sm font-medium rounded-full border border-transparent bg-none text-white hover:bg- focus:outline-hidden focus:bg- disabled:opacity-50 disabled:pointer-events-none" href="mail:eroosamuyi11451@gmail.com">
@@ -31,11 +31,11 @@ export function Header() {
                         </div>
                     </div>
 
-                    {/* <div className="flex justify-center md:justify-end">
+                    <div className="flex justify-center md:justify-end ">
                         <img
-                            src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&h=800&q=80"
-                            alt="Illustration" className="w-full h-96 object-contain max-w-sm md:max-w-lg lg:max-w-xl" />
-                    </div> */}
+                            src="/image/profile_hearder_img.svg"
+                            alt="Illustration" className="w-full h-100 object-contain max-w-sm md:max-w-lg lg:max-w-xl" />
+                    </div>
 
                 </div>
             </div>

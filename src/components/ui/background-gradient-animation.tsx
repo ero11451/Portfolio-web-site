@@ -2,15 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "../../lib/utils";
 
 export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "#0C0C0D",
-  gradientBackgroundEnd = "#0C0C0D",
+  gradientBackgroundStart = "rgb(108, 0, 162)",
+  gradientBackgroundEnd = "rgb(0, 17, 82)",
   firstColor = "18, 113, 255",
   secondColor = "221, 74, 255",
   thirdColor = "100, 220, 255",
   fourthColor = "200, 50, 50",
   fifthColor = "180, 180, 50",
   pointerColor = "140, 100, 255",
-  size = "20%",
+  size = "80%",
   blendingValue = "hard-light",
   children,
   className,
@@ -33,66 +33,51 @@ export const BackgroundGradientAnimation = ({
   containerClassName?: string;
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
-  const [curPos, setCurPos] = useState({ x: 0, y: 0 });
-  console.log("curPos", curPos);
-  const [targetPos, setTargetPos] = useState({ x: 0, y: 0 });
 
-  const animate = () => {
-    setCurPos(prev => {
-      const dx = (targetPos.x - prev.x) / 20;
-      const dy = (targetPos.y - prev.y) / 20;
-      const newPos = { x: prev.x + dx, y: prev.y + dy };
+  const [curX, setCurX] = useState(0);
+  const [curY, setCurY] = useState(0);
+  const [tgX, setTgX] = useState(0);
+  const [tgY, setTgY] = useState(0);
+  useEffect(() => {
+    document.body.style.setProperty(
+      "--gradient-background-start",
+      gradientBackgroundStart
+    );
+    document.body.style.setProperty(
+      "--gradient-background-end",
+      gradientBackgroundEnd
+    );
+    document.body.style.setProperty("--first-color", firstColor);
+    document.body.style.setProperty("--second-color", secondColor);
+    document.body.style.setProperty("--third-color", thirdColor);
+    document.body.style.setProperty("--fourth-color", fourthColor);
+    document.body.style.setProperty("--fifth-color", fifthColor);
+    document.body.style.setProperty("--pointer-color", pointerColor);
+    document.body.style.setProperty("--size", size);
+    document.body.style.setProperty("--blending-value", blendingValue);
+  }, []);
 
-      if (interactiveRef.current) {
-        interactiveRef.current.style.transform = `translate(${Math.round(
-          newPos.x
-        )}px, ${Math.round(newPos.y)}px)`;
+  useEffect(() => {
+    function move() {
+      if (!interactiveRef.current) {
+        return;
       }
-
-      requestAnimationFrame(animate);
-      return newPos;
-    });
-  };
-
-  useEffect(() => {
-    if (interactive) {
-      requestAnimationFrame(animate);
+      setCurX(curX + (tgX - curX) / 20);
+      setCurY(curY + (tgY - curY) / 20);
+      interactiveRef.current.style.transform = `translate(${Math.round(
+        curX
+      )}px, ${Math.round(curY)}px)`;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [interactive]);
 
-  useEffect(() => {
-    const root = document.body.style;
-    root.setProperty("--gradient-background-start", gradientBackgroundStart);
-    root.setProperty("--gradient-background-end", gradientBackgroundEnd);
-    root.setProperty("--first-color", firstColor);
-    root.setProperty("--second-color", secondColor);
-    root.setProperty("--third-color", thirdColor);
-    root.setProperty("--fourth-color", fourthColor);
-    root.setProperty("--fifth-color", fifthColor);
-    root.setProperty("--pointer-color", pointerColor);
-    root.setProperty("--size", size);
-    root.setProperty("--blending-value", blendingValue);
-  }, [
-    gradientBackgroundStart,
-    gradientBackgroundEnd,
-    firstColor,
-    secondColor,
-    thirdColor,
-    fourthColor,
-    fifthColor,
-    pointerColor,
-    size,
-    blendingValue,
-  ]);
+    move();
+  }, [tgX, tgY]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!interactiveRef.current) return;
-    const rect = interactiveRef.current.getBoundingClientRect();
-    setTargetPos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (interactiveRef.current) {
+      const rect = interactiveRef.current.getBoundingClientRect();
+      setTgX(event.clientX - rect.left);
+      setTgY(event.clientY - rect.top);
+    }
   };
 
   const [isSafari, setIsSafari] = useState(false);
@@ -102,17 +87,19 @@ export const BackgroundGradientAnimation = ({
 
   return (
     <div
-      onMouseMove={interactive ? handleMouseMove : undefined}
       className={cn(
-        " w-fit relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
+        "h-scren w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
         containerClassName
       )}
     >
-      {/* SVG filter for background blur */}
       <svg className="hidden">
         <defs>
           <filter id="blurMe">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
             <feColorMatrix
               in="blur"
               mode="matrix"
@@ -123,36 +110,67 @@ export const BackgroundGradientAnimation = ({
           </filter>
         </defs>
       </svg>
-
       <div className={cn("", className)}>{children}</div>
-
       <div
         className={cn(
           "gradients-container h-full w-full blur-lg",
           isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
         )}
       >
-        {/* Gradient blobs */}
-        {[firstColor, secondColor, thirdColor, fourthColor, fifthColor].map((_, i) => (
-          <div
-            key={i}
-            className={cn(
-              `absolute [background:radial-gradient(circle_at_center,_rgba(var(--${["first", "second", "third", "fourth", "fifth"][i]}-color),_0.8)_0,_rgba(var(--${["first", "second", "third", "fourth", "fifth"][i]}-color),_0)_50%)_no-repeat]`,
-              `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)]`,
-              `top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
-              `animate-${["first", "second", "third", "fourth", "fifth"][i]}`,
-              `opacity-${i === 3 ? "70" : "100"}`
-            )}
-          ></div>
-        ))}
+        <div
+          className={cn(
+            `absolute [background:radial-gradient(circle_at_center,_var(--first-color)_0,_var(--first-color)_50%)_no-repeat]`,
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
+            `[transform-origin:center_center]`,
+            `animate-first`,
+            `opacity-100`
+          )}
+        ></div>
+        <div
+          className={cn(
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--second-color),_0)_50%)_no-repeat]`,
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
+            `[transform-origin:calc(50%-400px)]`,
+            `animate-second`,
+            `opacity-100`
+          )}
+        ></div>
+        <div
+          className={cn(
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
+            `[transform-origin:calc(50%+400px)]`,
+            `animate-third`,
+            `opacity-100`
+          )}
+        ></div>
+        <div
+          className={cn(
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
+            `[transform-origin:calc(50%-200px)]`,
+            `animate-fourth`,
+            `opacity-70`
+          )}
+        ></div>
+        <div
+          className={cn(
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fifth-color),_0.8)_0,_rgba(var(--fifth-color),_0)_50%)_no-repeat]`,
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
+            `[transform-origin:calc(50%-800px)_calc(50%+800px)]`,
+            `animate-fifth`,
+            `opacity-100`
+          )}
+        ></div>
 
-        {/* Pointer blob */}
         {interactive && (
           <div
             ref={interactiveRef}
+            onMouseMove={handleMouseMove}
             className={cn(
               `absolute [background:radial-gradient(circle_at_center,_rgba(var(--pointer-color),_0.8)_0,_rgba(var(--pointer-color),_0)_50%)_no-repeat]`,
-              `[mix-blend-mode:var(--blending-value)] w-full h-full -top-1/2 -left-1/2 opacity-70`
+              `[mix-blend-mode:var(--blending-value)] w-full h-full -top-1/2 -left-1/2`,
+              `opacity-70`
             )}
           ></div>
         )}
@@ -160,4 +178,3 @@ export const BackgroundGradientAnimation = ({
     </div>
   );
 };
- 

@@ -4,12 +4,13 @@ import { motion, AnimatePresence } from "motion/react";
 
 import { useEffect, useState } from "react";
 
-type IProject = {
+export type IProject = {
     quote: string;
     name: string;
     designation: string;
     src: string;
     technology: string[];
+    github?: string;
 };
 export const Animatedproject = ({
     project,
@@ -87,7 +88,7 @@ export const Animatedproject = ({
                                             // width={800}
                                             height={1000}
                                             draggable={false}
-                                            className="h-full w-[400px] rounded-3xl object-cover object-center"
+                                            className="h-full w-[400px] bg-black rounded-3xl object-cover object-center"
                                         />
                                     </motion.div>
                                 ))}
@@ -96,7 +97,7 @@ export const Animatedproject = ({
                     </div>
                     <div className="py-5 col-span-3">
 
-                        <div className="flex flex-1 flex-col justify-between  py-4 border w-full h-fit rounded-lg p-3 bg-[#5E5E5E] bg-opacity-50  border-[#5E5E5E] ">
+                        <div className="flex flex-1 flex-col justify-between  py-4 border w-full h-fit rounded-lg p-3 bg-[#5E5E5E] transition-all duration-300 ease-in-out bg-opacity-50  border-[#5E5E5E] bg-gradient-to-r from-[#8396cd52] via-[#c9cdd652] to-[#0a298552] bg-[length:200%_200%] animate-gradient-x">
                             <motion.div
                                 key={active}
                                 initial={{
@@ -163,12 +164,12 @@ export const Animatedproject = ({
                             </motion.div>
 
                             <div className="inline-flex flex-wrap gap-2 mt-5">
-                                <div className="inline-flex flex-nowrap items-center border border-[#282829] rounded-full p-1.5 pe-3 bg-gradient-to-r from-[#3B3B3B52]  to-[#1A1A1A00]">
+                                <a href={project[active].github} className="inline-flex flex-nowrap items-center border border-[#868693] rounded-full p-1.5 pe-3 bg-gradient-to-r from-[#3B3B3B52]  to-[#1A1A1A00]">
                                     <img className="me-1.5 inline-block size-6 rounded-full" src="/icon/githubIcon.svg" alt="Avatar" />
                                     <div className="whitespace-nowrap text-sm font-medium text-white">
                                         git hub
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div className="flex gap-4 pt-12 md:pt-10">
@@ -202,7 +203,7 @@ const Badge = ({
 }) => {
     return (
         <div
-            className={`inline-flex items-center rounded-full border border-[#282829] bg-gradient-to-r from-[#3B3B3B52]  to-[#1A1A1A00] px-2 py-1 text-sm font-medium text-white ${className}`}
+            className={`inline-flex items-center rounded-full border border-[#868693] bg-gradient-to-r from-[#3B3B3B52]  to-[#1A1A1A00] px-3 py-1 text-sm font-medium text-[#e4e4e9] ${className}`}
         >
             {label}
         </div>

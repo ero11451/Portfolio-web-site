@@ -174,32 +174,12 @@ const data = [
                         {
                             quote:
                                 "A mobile telemedicine application developed using React Native, increasing user access to healthcare and driving a 50% rise in engagement.",
-                            name: "10zyme Telemedicine App",
+                            name: "10zyme Tele medicine App",
                             designation: "Volunteer Software Developer",
                             company: "10zyme",
                             location: "Essex, United Kingdom",
                             date: "Dec 2023 – Jul 2024",
                             src: "https://images.unsplash.com/photo-1588776814546-ec7e5f1a5fcf?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
-                        },
-                        {
-                            quote:
-                                "A web-based enterprise dashboard enabling users to manage transactions and financial data securely, leveraging microservices architecture.",
-                            name: "Enterprise Finance Dashboard",
-                            designation: "Software Developer",
-                            company: "Onafriq",
-                            location: "London, United Kingdom",
-                            date: "Nov 2022 – Present",
-                            src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
-                        },
-                        {
-                            quote:
-                                "A faith-based media app delivering sermons, livestreams, and event updates for Miracle Assembly’s global audience.",
-                            name: "Miracle Assembly App",
-                            designation: "Full Stack Developer",
-                            company: "Revent Technologies",
-                            location: "Lagos, Nigeria",
-                            date: "Jan 2020 – Dec 2021",
-                            src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
                         },
                         {
                             quote:
@@ -211,24 +191,53 @@ const data = [
                             date: "Jan 2021 – Nov 2021",
                             src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
                         },
+                        {
+                            quote:
+                                "A telehealth platform that connects patients with healthcare providers, developed using React Native and Node.js.",
+                            name: "Revent Tech",
+                            designation: "Software Engineer",
+                            company: "Revent Technologies",
+                            location: "Lagos, Nigeria",
+                            date: "Jan 2021 – Dec 2021",
+                            src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3"
+                        },
+                        {
+                            quote: "Contributed to mobile health solutions aimed at improving healthcare delivery.",
+                            name: "MOBicure Health Solutions",
+                            designation: "Software Engineer",
+                            company: "MOBicure",
+                            location: "Nigeria",
+                            date: "Dates not provided",
+                            src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3"
+                        },
+                         {
+                            quote:
+                                "A faith-based media app delivering sermons, livestreams, and event updates for Miracle Assembly’s global audience.",
+                            name: "Miracle Assembly App",
+                            designation: "Full Stack Developer",
+                            company: "Revent Technologies",
+                            location: "Lagos, Nigeria",
+                            date: "Jan 2019 – Dec 2020",
+                            src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
+                        },
                     ]
                         .map((job, idx) => (
                             <div
                                 key={idx}
                                 className="grid grid-cols-7 py-5 gap-5 text-xs text-white border-b border-neutral-700"
                             >
-                                <div className="text-left text-neutral-300 text-xs col-span-2">
+                                <div className="text-left text-neutral-300 text-xs col-span-7 lg:col-span-2">
                                     <p>{job.date}</p>
                                     <p>{job.location}</p>
                                 </div>
-                                <div className="flex flex-col  gap-1 text-left col-span-4">
+                                <div className="flex flex-col  gap-1 text-left col-span-6 lg:col-span-4">
                                     <p className="font-bold">{job.designation}</p>
                                     <p>{job.company}</p>
-                                    {/* <p>{job.quote}</p> */}
+                                    <p>{job.quote}</p>
                                 </div>
-                                <div className="flex items-center justify-center w-fit h-fit bg-[#5E5E5E] bg-opacity-50 rounded-lg">
+                                <a href="https://www.linkedin.com/in/ero-osamuyi/details/experience/"  className="flex items-center justify-center w-fit h-fit bg-[#5E5E5E] bg-opacity-50 rounded-lg">
                                     <img src="icon/arrow.png" alt="Company Icon" className="w-6 h-6" />
-                                </div>
+                                </a>
                             </div>
                         ))}
                 </div>
@@ -250,7 +259,7 @@ const data = [
                                 key={idx}
                                 className="flex items-center p-5 rounded-lg gap-3 text-xs text-white bg-[#5E5E5E] bg-opacity-50 border border-[#5E5E5E]"
                             >
-                                <div>
+                                <div >
 
                                     {tech.svg}
                                 </div>
@@ -277,7 +286,7 @@ export function Experience() {
 
 
             {/* <Profiler id="Timeline" onRender={onRender}> */}
-                <Timeline data={data} />
+            <Timeline data={data} />
             {/* </Profiler> */}
 
 

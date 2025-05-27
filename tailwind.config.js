@@ -29,6 +29,9 @@ module.exports = {
 
             backgroundImage: {
                 'wave-svg': "url('./src/assets/wavebg.svg')",
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+
             },
             background: {
                 'primary': '-red-400'
@@ -43,9 +46,24 @@ module.exports = {
                 bounce200: 'bounce 1s infinite 200ms',
                 bounce400: 'bounce 1s infinite 400ms',
                 scroll: "scrollX var(--animation-duration) linear infinite var(--animation-direction)",
+                'gradient-x': 'gradient-x 6s ease infinite',
+                'gradient-y': 'gradient-y 6s ease infinite',
+                'gradient-xy': 'gradient-xy 6s ease infinite',
 
             },
             keyframes: {
+                'gradient-x': {
+                    '0%, 100%': { 'background-position': '0% 50%' },
+                    '50%': { 'background-position': '100% 50%' },
+                },
+                'gradient-y': {
+                    '0%, 100%': { 'background-position': '50% 0%' },
+                    '50%': { 'background-position': '50% 100%' },
+                },
+                'gradient-xy': {
+                    '0%, 100%': { 'background-position': '0% 0%' },
+                    '50%': { 'background-position': '100% 100%' },
+                },
                 move: {
                     "0%": { transform: "translateX(-200px)" },
                     "100%": { transform: "translateX(200px)" },
